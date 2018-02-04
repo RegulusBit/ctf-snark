@@ -1,2 +1,2 @@
 # libsnark-tutorial 
-Built for CTF blockchain-based smart contrat.
+Built for CTF blockchain-based smart contract.
