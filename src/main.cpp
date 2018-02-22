@@ -11,10 +11,10 @@
 int main()
 {
 
-    //std::cout << "initializing circuit generation using gadgetlib1 hashing libraries..." << std::endl;
-    //prover_profile prover("name", "id");
-    //prover_profile::initialization();
-    //r1cs_ppzksnark_keypair<default_r1cs_ppzksnark_pp> keys = prover.generate_public_keys();
+    std::cout << "initializing circuit generation using gadgetlib1 hashing libraries..." << std::endl;
+    prover_profile prover("name", "id");
+    prover_profile::initialization();
+    r1cs_ppzksnark_keypair<default_r1cs_ppzksnark_pp> keys = prover.generate_public_keys();
 
     /* concatenate block = left || right */
     const libff::bit_vector left_bv = libff::int_list_to_bits({0x426bc2d84dc8678281e8957a409ec148e6cffbe8afe6ba4f9c6f1978dd7af7e9}, 256);
@@ -34,9 +34,9 @@ int main()
     std::cout << std::endl << s;
 
 
-    //r1cs_ppzksnark_proof<default_r1cs_ppzksnark_pp> _proof = prover.prove_witness(keys, left_bv, right_bv, hash_bv);
+    r1cs_ppzksnark_proof<default_r1cs_ppzksnark_pp> _proof = prover.prove_witness(keys, left_bv, right_bv, hash_bv);
 
-    //prover.verify_witness(keys, _proof);
+    prover.verify_witness(keys, _proof);
 
     return 0;
 }
